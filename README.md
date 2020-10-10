@@ -25,12 +25,21 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. Differences between using _sessions_ or _JSON Web Tokens_ for authentication.
+-In the session based authentication, the server will create a session for the user after the user logs in. The session id is then stored on a cookie on the user’s browser. While the user stays logged in, the cookie would be sent along with every subsequent request. The server can then compare the session id stored on the cookie against the session information stored in the memory to verify user’s identity and sends response with the corresponding state!
+-In the token based application, the server creates JWT with a secret and sends the JWT to the client. The client stores the JWT (usually in local storage) and includes JWT in the header with every request. The server would then validate the JWT with every request from the client and sends response.
 
 2. What does `bcrypt` do to help us store passwords in a secure manner.
+-It hashes them by combining the password with a salt and hashing the resulting string using a cryptographic algorithm. Then, when a user later submits their password to log in to an app, the salt used to store the user’s password is added to that password and hashed to see if it matches the hash stored on the server. By doing this, the user’s actual password is never stored on the server, so it stays secure.  
 
 3. How are unit tests different from integration and end-to-end testing.
+-Unit tests only test small parts of your code in isolation while integration testing will test how different parts of the system work in tandem. 
+
 
 4. How _Test Driven Development_ changes the way we write applications and tests.
+-In theory, when you start with the end (the tests) in mind, you can write much higher quality code. 
+The simple concept of TDD is to write and correct the failed tests before writing new code (before development). This helps to avoid duplication of code as we write a small amount of code at a time in order to pass tests. 
+
+
 
 You are expected to be able to answer questions in these areas. Your responses contribute to your Sprint Challenge grade.
 
